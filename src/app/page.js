@@ -2,6 +2,7 @@ import HeroSection from "@/components/Hero";
 import HomeCourseSec from "@/components/HomeCourseSec";
 import LearningTips from "@/components/LearningTips";
 import TopInstructors from "@/components/TopInstructor";
+import TrendingSection from "@/components/TrendingCourse";
 
 export default function Home() {
   return (
@@ -35,6 +36,10 @@ export default function Home() {
       {/* Top Instructor Section */}
       <div className="container mx-auto my-7">
         <TopInstructors></TopInstructors>
+      </div>
+      {/* Trending Section */}
+      <div className="container mx-auto my-5">
+        <TrendingSection></TrendingSection>
       </div>
     </>
   );
