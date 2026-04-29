@@ -34,13 +34,13 @@ const LearningTips = () => {
   return (
     <section className="py-20 bg-white font-mono border-t border-black px-6">
       <div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="mb-16 border-l-4 border-black pl-6"
         >
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
-            Learning_Protocols
+            Learning <br /> Protocols
           </h2>
           <p className="text-gray-500 text-sm mt-2 uppercase tracking-widest">
             Optimize your cognitive infrastructure for maximum retention.
@@ -48,7 +48,6 @@ const LearningTips = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,10 +58,15 @@ const LearningTips = () => {
             </h3>
             <div className="space-y-6">
               {techniques.map((item, idx) => (
-                <div key={idx} className="border border-black p-6 hover:bg-gray-50 transition-colors">
+                <div
+                  key={idx}
+                  className="border border-black p-6 hover:bg-gray-50 transition-colors"
+                >
                   <div className="flex items-center mb-4 text-black">
                     {item.icon}
-                    <span className="ml-3 font-black uppercase">{item.title}</span>
+                    <span className="ml-3 font-black uppercase">
+                      {item.title}
+                    </span>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed uppercase">
                     {item.desc}
@@ -82,10 +86,15 @@ const LearningTips = () => {
             </h3>
             <div className="space-y-6">
               {timeManagement.map((item, idx) => (
-                <div key={idx} className="border border-black p-6 hover:bg-gray-50 transition-colors">
+                <div
+                  key={idx}
+                  className="border border-black p-6 hover:bg-gray-50 transition-colors"
+                >
                   <div className="flex items-center mb-4 text-black">
                     {item.icon}
-                    <span className="ml-3 font-black uppercase">{item.title}</span>
+                    <span className="ml-3 font-black uppercase">
+                      {item.title}
+                    </span>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed uppercase">
                     {item.desc}
@@ -94,10 +103,9 @@ const LearningTips = () => {
               ))}
             </div>
           </motion.div>
-
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
