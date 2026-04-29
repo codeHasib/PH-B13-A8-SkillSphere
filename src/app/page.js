@@ -1,5 +1,6 @@
 import HeroSection from "@/components/Hero";
 import HomeCourseSec from "@/components/HomeCourseSec";
+import LearningTips from "@/components/LearningTips";
 
 export default function Home() {
   return (
@@ -13,11 +14,22 @@ export default function Home() {
       <div className="mb-5">
         {/* Hero Section */}
         <HeroSection></HeroSection>
-        {/* Top three card section */}
-        <h2 className="uppercase text-3xl md:text-5xl lg:text-7xl text-center mt-5 mb-10 underline font-space">
-          Our top rated courses
-        </h2>
-        <HomeCourseSec></HomeCourseSec>
+      </div>
+      {/* Top three card section */}
+      <div className="container mx-auto px-5 mt-10">
+        <div className="mb-16 border-l-4 border-black pl-6">
+          <h2 className="text-4xl md:text-6xl font-black font-mono uppercase tracking-tighter">
+            Our_top_rated_courses
+          </h2>
+          <p className="text-gray-500 text-sm mt-2 uppercase tracking-widest">
+            register right now to get the facilities
+          </p>
+        </div>
+      </div>
+      <HomeCourseSec></HomeCourseSec>
+      {/* Learning Tips Section */}
+      <div className="container mx-auto">
+        <LearningTips></LearningTips>
       </div>
     </>
   );
