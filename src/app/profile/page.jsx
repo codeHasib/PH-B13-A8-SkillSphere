@@ -1,7 +1,9 @@
+import MyProfileCompo from "@/components/MyProfileCompo";
+
 const ProfilePage = () => {
   return (
     <div>
-        This is profile
+      <MyProfileCompo></MyProfileCompo>
     </div>
   );
 };

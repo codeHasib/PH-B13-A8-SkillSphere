@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] w-full font-mono">
+    <div className="flex items-center justify-center min-h-screen w-full font-mono">
       <div className="relative">
         <span className="loading loading-spinner loading-lg text-black"></span>
 

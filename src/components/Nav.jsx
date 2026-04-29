@@ -38,7 +38,7 @@ const Nav = () => {
         <Link
           href={"/profile"}
           className={
-            pathName === "/profile"
+            pathName === "/profile" || pathName.startsWith("/profile/")
               ? "border-b-3 border-orange-600 rounded-none font-extrabold transition-all duration-100 ease-in-out"
               : ""
           }
@@ -61,9 +61,12 @@ const Nav = () => {
   const userAvatarCompo = (
     <>
       <div className="flex justify-center items-center gap-3">
-        <div className="h-10 w-10 rounded-full bg-orange-600 flex justify-center items-center text-white font-bold font-space">
+        <Link
+          href={"/profile"}
+          className="h-10 block w-10 rounded-full bg-orange-600 flex justify-center items-center text-white font-bold font-space"
+        >
           {userName}
-        </div>
+        </Link>
 
         <button
           onClick={logOut}
