@@ -1,6 +1,7 @@
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,6 +29,12 @@ export default function RootLayout({ children }) {
       <body>
         <Nav></Nav>
         {children}
+        <footer className="w-full bg-black text-white text-center p-4">
+          <p className="mb-4 md:mb-0">
+            &copy;2026 SKILLSPHERE ONLINE LEARNING PLATFORM
+          </p>
+        </footer>
+        <ToastContainer></ToastContainer>
       </body>
     </html>
   );

@@ -1,9 +1,12 @@
 "use client";
 
+import { signOut, useSession } from "@/lib/auth-client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { LuLogOut } from "react-icons/lu";
+import { usePathname, useRouter } from "next/navigation";
 
 const Nav = () => {
+  const router = useRouter();
   const pathName = usePathname();
   const links = (
     <>
@@ -46,6 +49,32 @@ const Nav = () => {
     </>
   );
 
+  function logOut() {
+    signOut();
+    router.push("/");
+  }
+
+  const { data, isPending } = useSession();
+
+  const userName = data?.user.name[0].toUpperCase();
+
+  const userAvatarCompo = (
+    <>
+      <div className="flex justify-center items-center gap-3">
+        <div className="h-10 w-10 rounded-full bg-orange-600 flex justify-center items-center text-white font-bold font-space">
+          {userName}
+        </div>
+
+        <button
+          onClick={logOut}
+          className="justify-center items-center gap-2 p-3 hidden lg:flex md:flex bg-black text-white font-semibold"
+        >
+          LOGOUT <LuLogOut></LuLogOut>
+        </button>
+      </div>
+    </>
+  );
+
   return (
     <div>
       <div className="navbar bg-base-100 shadow-sm">
@@ -70,9 +99,17 @@ const Nav = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               {links}
+              <li>
+                <button
+                  onClick={logOut}
+                  className="justify-center md:hidden items-center gap-2 p-3 flex bg-black text-white font-semibold"
+                >
+                  LOGOUT <LuLogOut></LuLogOut>
+                </button>
+              </li>
             </ul>
           </div>
           <Link href={"/"} className="btn btn-ghost text-xl font-space">
@@ -83,7 +120,34 @@ const Nav = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Login</a>
+          {data ? (
+            userAvatarCompo
+          ) : (
+            <div className="flex items-center justify-center gap-2 ">
+              <Link
+                href={"/auth/signin"}
+                className={
+                  pathName === "/auth/signin"
+                    ? "hidden"
+                    : "btn btn-ghost font-space font-semibold hidden md:flex lg:flex"
+                }
+              >
+                {" "}
+                LOGIN{" "}
+              </Link>
+              <Link
+                href={"/auth/signup"}
+                className={
+                  pathName === "/auth/signup"
+                    ? "hidden"
+                    : "p-2 bg-black text-white font-space font-semibold"
+                }
+              >
+                {" "}
+                JOIN_NOW{" "}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
