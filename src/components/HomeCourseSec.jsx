@@ -2,9 +2,14 @@
 
 import { useData } from "@/context/useData";
 import CourseCard from "./CourseCard";
+import Loader from "./Loader";
 
 const HomeCourseSec = () => {
-  const { courses } = useData();
+  const { courses, loading } = useData();
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
 
   const topThree = [...courses].sort((a, b) => b.rating - a.rating).slice(0, 3);
   return (

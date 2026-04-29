@@ -33,7 +33,7 @@ const LearningTips = () => {
 
   return (
     <section className="py-20 bg-white font-mono border-t border-black px-6">
-      <div className="max-w-7xl mx-auto">
+      <div>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,7 @@
 import HeroSection from "@/components/Hero";
 import HomeCourseSec from "@/components/HomeCourseSec";
 import LearningTips from "@/components/LearningTips";
+import TopInstructors from "@/components/TopInstructor";
 
 export default function Home() {
   return (
@@ -30,6 +31,10 @@ export default function Home() {
       {/* Learning Tips Section */}
       <div className="container mx-auto">
         <LearningTips></LearningTips>
+      </div>
+      {/* Top Instructor Section */}
+      <div className="container mx-auto my-7">
+        <TopInstructors></TopInstructors>
       </div>
     </>
   );
