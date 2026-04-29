@@ -1,4 +1,5 @@
 import HeroSection from "@/components/Hero";
+import HomeCourseSec from "@/components/HomeCourseSec";
 
 export default function Home() {
   return (
@@ -10,7 +11,13 @@ export default function Home() {
         <p className="font-inter -mt-2 lg:ml-3">ONLINE_LEARNING_PLATFORM</p>
       </div>
       <div className="mb-5">
+        {/* Hero Section */}
         <HeroSection></HeroSection>
+        {/* Top three card section */}
+        <h2 className="uppercase text-3xl md:text-5xl lg:text-7xl text-center mt-5 mb-10 underline font-space">
+          Our top rated courses
+        </h2>
+        <HomeCourseSec></HomeCourseSec>
       </div>
     </>
   );

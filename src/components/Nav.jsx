@@ -26,7 +26,7 @@ const Nav = () => {
         <Link
           href={"/courses"}
           className={
-            pathName === "/courses"
+            pathName === "/courses" || pathName.startsWith("/courses/")
               ? "border-b-3 border-orange-600 rounded-none font-extrabold transition-all duration-100 ease-in-out"
               : ""
           }
