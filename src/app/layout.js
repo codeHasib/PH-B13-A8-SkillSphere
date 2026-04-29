@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import { ToastContainer } from "react-toastify";
 import Footer from "@/components/Footer";
+import { DataProvider } from "@/context/useData";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <Nav></Nav>
-        {children}
+        <DataProvider>{children}</DataProvider>
         <Footer></Footer>
         <ToastContainer></ToastContainer>
       </body>

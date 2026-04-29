@@ -112,7 +112,10 @@ const Nav = () => {
               </li>
             </ul>
           </div>
-          <Link href={"/"} className="btn btn-ghost text-xl font-space">
+          <Link
+            href={"/"}
+            className="btn btn-ghost text-xl font-space uppercase"
+          >
             SkillsSphere
           </Link>
         </div>

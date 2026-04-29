@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "/images/web.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced JavaScript Mastery",
+    "instructor": "Jane Smith",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Deep dive into modern JavaScript concepts and patterns.",
+    "image": "/images/js.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "React & Next.js Complete Guide",
+    "instructor": "Michael Lee",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build powerful web apps using React and Next.js.",
+    "image": "/images/react.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Emily Johnson",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn the basics of user interface and user experience design.",
+    "image": "/images/ui.jpg",
+    "category": "Design"
+  },
+  {
+    "id": 5,
+    "title": "Python for Data Science",
+    "instructor": "David Brown",
+    "duration": "22 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Analyze data and build models using Python.",
+    "image": "/images/py.jpg",
+    "category": "Data Science"
+  },
+  {
+    "id": 6,
+    "title": "Machine Learning A-Z",
+    "instructor": "Sarah Wilson",
+    "duration": "25 hours",
+    "rating": 4.7,
+    "level": "Advanced",
+    "description": "Master machine learning algorithms and real-world applications.",
+    "image": "/images/ml.jpg",
+    "category": "AI"
+  },
+  {
+    "id": 7,
+    "title": "Node.js Backend Development",
+    "instructor": "Chris Evans",
+    "duration": "16 hours",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "description": "Build scalable backend APIs with Node.js and Express.",
+    "image": "/images/node.jpg",
+    "category": "Development"
+  },
+  {
+    "id": 8,
+    "title": "Cybersecurity Basics",
+    "instructor": "Anna Taylor",
+    "duration": "14 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Understand core cybersecurity concepts and best practices.",
+    "image": "/images/sec.jpg",
+    "category": "Security"
+  }
+]
