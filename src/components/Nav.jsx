@@ -43,7 +43,7 @@ const Nav = () => {
               : ""
           }
         >
-          PROFILE
+          MY PROFILE
         </Link>
       </li>
     </>
@@ -79,7 +79,7 @@ const Nav = () => {
   );
 
   return (
-    <div>
+    <div className="sticky top-0 left-0 z-90">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
