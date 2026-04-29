@@ -1,5 +1,6 @@
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Nav from "@/components/Nav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,7 +25,10 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={`${inter.variable} ${space_grotesk.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <Nav></Nav>
+        {children}
+      </body>
     </html>
   );
 }
