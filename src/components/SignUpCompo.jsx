@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import BannerImg from "../../public/banner.jpg";
@@ -9,15 +9,22 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { Eye, EyeOff } from "lucide-react";
 
 const SignUpCompo = () => {
   const router = useRouter();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData.entries());
-    
+
     const { data, error } = await authClient.signUp.email({
       name: userData.name,
       image: userData.image,
@@ -27,7 +34,7 @@ const SignUpCompo = () => {
 
     if (!error) {
       toast.success("REGISTRATION SUCCESSFUL");
-      router.push("/courses");
+      window.location.href = "/courses";
     } else {
       toast.error(error.message.toUpperCase());
     }
@@ -104,6 +111,7 @@ const SignUpCompo = () => {
             <input
               type="text"
               name="name"
+              title="Please Enter a valid name"
               required
               placeholder="John Doe"
               className="border border-black p-3 w-full focus:bg-gray-50 outline-none"
@@ -115,6 +123,8 @@ const SignUpCompo = () => {
             <input
               type="email"
               name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Please enter a valid email address (e.g., user@skillsphere.com)"
               required
               placeholder="user@skillsphere.com"
               className="border border-black p-3 w-full focus:bg-gray-50 outline-none"
@@ -122,25 +132,31 @@ const SignUpCompo = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-bold mb-2">IMAGE URL</label>
-            <input
-              type="text"
-              name="image"
-              required
-              placeholder="https://image-link.com"
-              className="border border-black p-3 w-full focus:bg-gray-50 outline-none"
-            />
-          </div>
-
-          <div>
             <label className="block text-xs font-bold mb-2">PASSWORD</label>
-            <input
-              type="password"
-              name="password"
-              required
-              placeholder="***********"
-              className="border border-black p-3 w-full focus:bg-gray-50 outline-none"
-            />
+            <div className="relative group">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                required
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                title="Password must be at least 8 characters long and include both letters and numbers."
+                placeholder="***********"
+                className="border border-black p-3 w-full focus:bg-gray-50 outline-none font-mono pr-12"
+              />
+
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-black/50 hover:text-black transition-colors"
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? (
+                  <EyeOff className="w-4 h-4" />
+                ) : (
+                  <Eye className="w-4 h-4" />
+                )}
+              </button>
+            </div>
           </div>
 
           <motion.button

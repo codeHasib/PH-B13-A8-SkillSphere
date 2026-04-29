@@ -38,7 +38,6 @@ const CurriculumCompo = () => {
     <section className="w-full bg-white font-mono border-t border-black py-12 md:py-20">
       <div>
         
-        {/* Simple Fade-in Header */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -52,12 +51,9 @@ const CurriculumCompo = () => {
             Detailed Syllabus
           </p>
         </motion.div>
-
-        {/* Curriculum List */}
         <div className="border border-black">
           {curriculumData.map((module, idx) => (
             <div key={idx} className="border-b border-black last:border-b-0">
-              {/* Module Header Toggle */}
               <button
                 onClick={() => setActiveSection(activeSection === idx ? -1 : idx)}
                 className="w-full flex items-center justify-between p-5 md:p-6 bg-white hover:bg-gray-50 transition-colors"
@@ -72,7 +68,6 @@ const CurriculumCompo = () => {
                 />
               </button>
 
-              {/* Light Animated Content */}
               <AnimatePresence>
                 {activeSection === idx && (
                   <motion.div
