@@ -84,7 +84,6 @@ const SignUpCompo = () => {
         </div>
       </motion.div>
 
-      {/* Right Section - Form */}
       <motion.div
         initial={{ x: 50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -127,6 +126,18 @@ const SignUpCompo = () => {
               title="Please enter a valid email address (e.g., user@skillsphere.com)"
               required
               placeholder="user@skillsphere.com"
+              className="border border-black p-3 w-full focus:bg-gray-50 outline-none"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold mb-2">IMAGE</label>
+            <input
+              type="text"
+              name="image"
+              title="Please Enter a valid Image URL"
+              required
+              placeholder="IMAGE_URL"
               className="border border-black p-3 w-full focus:bg-gray-50 outline-none"
             />
           </div>
