@@ -1,7 +1,9 @@
+import SignInCompo from "@/components/SignInCompo";
+
 const SignInPage = () => {
   return (
     <div>
-        This is sign in page
+      <SignInCompo></SignInCompo>
     </div>
   );
 };
