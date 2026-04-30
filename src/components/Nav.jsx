@@ -105,14 +105,18 @@ const Nav = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               {links}
-              <li>
-                <button
-                  onClick={logOut}
-                  className="justify-center md:hidden items-center gap-2 p-3 flex bg-black text-white font-semibold"
-                >
-                  LOGOUT <LuLogOut></LuLogOut>
-                </button>
-              </li>
+              {data ? (
+                <li>
+                  <button
+                    onClick={logOut}
+                    className="justify-center md:hidden items-center gap-2 p-3 flex bg-black text-white font-semibold"
+                  >
+                    LOGOUT <LuLogOut></LuLogOut>
+                  </button>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
           <Link
