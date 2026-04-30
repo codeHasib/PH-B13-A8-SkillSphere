@@ -34,7 +34,7 @@ const SignUpCompo = () => {
 
     if (!error) {
       toast.success("REGISTRATION SUCCESSFUL");
-      router.push("/auth/login");
+      router.push("/auth/signin");
     } else {
       toast.error(error.message.toUpperCase());
     }
