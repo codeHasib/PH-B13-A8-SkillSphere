@@ -27,12 +27,12 @@ const SignInCompo = () => {
     const { data, error } = await authClient.signIn.email({
       email: userData.email,
       password: userData.password,
-      callbackURL: "/courses",
+      callbackURL: "/",
     });
 
     if (!error) {
       toast.success("SIGNED IN SUCCESSFULLY");
-      router.push("/courses");
+      router.push("/");
     } else {
       toast.error(error.message.toUpperCase());
     }

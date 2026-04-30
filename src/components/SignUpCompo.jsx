@@ -34,7 +34,7 @@ const SignUpCompo = () => {
 
     if (!error) {
       toast.success("REGISTRATION SUCCESSFUL");
-      window.location.href = "/courses";
+      router.push("/auth/login");
     } else {
       toast.error(error.message.toUpperCase());
     }
